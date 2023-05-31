@@ -8,6 +8,10 @@ curl localhost:8080/users/5555/friends
 curl localhost:8080/users/2222 --request "DELETE"
 curl localhost:8080/users/2222
 curl localhost:8080/users
-curl localhost:8080/users/5555/friends
-curl localhost:8080/users/5555/friends/2222 --request "DELETE"
-curl localhost:8080/users/5555
+curl localhost:8080/users/1234/friends
+curl localhost:8080/users/1234/friends --include --header "Content-Type: application/json" -d @body.json --request "POST"
+curl localhost:8080/users/1234/friends
+curl localhost:8080/users/1234/friends/2222 --request "DELETE"
+curl localhost:8080/users/1234/friends/5555 --request "DELETE"
+curl localhost:8080/users/1234
+curl localhost:8080/users

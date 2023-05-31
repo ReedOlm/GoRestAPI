@@ -51,9 +51,22 @@ func AddUser(c *gin.Context){
     c.IndentedJSON(http.StatusCreated, newUser)
 }
 
-// TODO Post /users/:id/friends
 func AddFriendToUser(c *gin.Context){
+    id := c.Param("id")
+    user, err, _ := service.FindUserByID(id)
 
+    if err != nil {
+        c.IndentedJSON(http.StatusNotFound, gin.H{"message": "User not found."})
+        return
+    }
+
+    var newFriend model.User
+    if err = c.BindJSON(&newFriend); err != nil {
+        return
+    }
+
+    user.Friends = append(user.Friends, newFriend.ID)
+    c.IndentedJSON(http.StatusCreated, newFriend.ID)
 }
 
 // PUT

@@ -15,7 +15,7 @@ A simple REST API in Go using the Gin framework to manage Users with an in-memor
   - An empty database, or having no friends is a successful return.
 ### POST:
   - No validation on email / name validity required.
-  - Friend adding request body is just user ID, ensuring user exists is required
+  - Friend adding request body formatted as a User
   - Adding a friend to list, will not add you to their list.
 ### PUT:
   - Requests will contain a complete User in body of request, all fields will be overwritten by request body object.
