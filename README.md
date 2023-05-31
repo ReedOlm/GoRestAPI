@@ -4,7 +4,8 @@ A simple REST API in Go using the Gin framework to manage Users with an in-memor
 ## Instructions for Running:
   - clone repo
   - cd into repo and run "go run main.go"
-  - in tool of choice (I've provided sample curl commands in testCommands.txt) hit localhost:8080 with any of the following endpoints
+  - in tool of choice hit localhost:8080 with any of the following endpoints
+  - I've provided some sample curl commands in testCommands.txt, as well as 2 sample bodies
 
 ### Endpoints
   - GET     /users
