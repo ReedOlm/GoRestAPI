@@ -4,6 +4,8 @@ curl localhost:8080/users --include --header "Content-Type: application/json" -d
 curl localhost:8080/users/5555
 curl localhost:8080/users/2222 --include --header "Content-Type: application/json" -d @updateBody.json --request "PUT"
 curl localhost:8080/users/2222
+curl localhost:8080/users/2222/friends
 curl localhost:8080/users/2222 --request "DELETE"
 curl localhost:8080/users/2222
 curl localhost:8080/users
+curl localhost:8080/users/5555/friends
