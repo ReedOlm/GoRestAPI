@@ -1,5 +1,5 @@
 # GoRestAPI
-A simple REST API in Go to manage Users
+A simple REST API in Go using the Gin framework to manage Users with an in-memory database
 
 ## Instructions for Running:
   - Do this
