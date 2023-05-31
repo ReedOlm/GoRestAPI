@@ -2,10 +2,32 @@
 A simple REST API in Go using the Gin framework to manage Users with an in-memory database
 
 ## Instructions for Running:
-  - Do this
-  - Then this
-  - etc...
+  - clone repo
+  - cd into repo and run "go run main.go"
+  - in tool of choice (I've provided sample curl commands in testCommands.txt) hit localhost:8080 with any of the following endpoints
 
+### Endpoints
+  - GET     /users
+  - GET     /users/:id
+  - GET     /users/:id/friends
+  - POST    /users
+  - POST    /users/:id/friends
+  - PUT     /users/:id
+  - DELETE  /users/:id
+  - DELETE  /users/:id/friends/:friendId
+
+### Data format
+  - :id and :friendId: any number convertable to int64
+  - POST/PUT, json with this format:
+```
+{
+    ID        int64 
+    Name      string
+    Email     string
+    Age       int
+    Friends   []int64
+}
+```
 ## Assumptions:
 ### General:
   - Use of framework allowed, not building server from scratch.
