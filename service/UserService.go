@@ -1,11 +1,13 @@
 package service
 
 import (
-    "github.com/ReedOlm/RestApi/model"    
-    "github.com/ReedOlm/RestApi/data"    
+    "github.com/ReedOlm/GoRestAPI/model"    
+    "github.com/ReedOlm/GoRestAPI/data"
+    "strconv"
+    "errors" 
 )
 
-func findUserByID(idS string) (*model.User, error, int){
+func FindUserByID(idS string) (*model.User, error, int){
     idN, err := strconv.ParseInt(idS, 10, 64)
     if err != nil{
         return nil, errors.New("Error with user ID"), -1
@@ -20,7 +22,7 @@ func findUserByID(idS string) (*model.User, error, int){
     return nil, errors.New("Error, user not found"), -1
 }
 
-func findFriends(list []int64) ([]model.User){
+func FindFriends(list []int64) ([]model.User){
 
     friends:= make([]model.User, 0)
     for i := 0; i < len(list); i++ {
