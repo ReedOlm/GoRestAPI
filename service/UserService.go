@@ -35,3 +35,12 @@ func FindFriends(list []int64) ([]model.User){
 
     return friends
 }
+
+func FindFriendIndex(list []int64, friend int64) (int){
+    for i := 0; i < len(list); i++ {
+        if list[i] == friend {
+	    return i
+	}
+    }
+    return -1
+}
